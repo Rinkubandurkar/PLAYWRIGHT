@@ -1,45 +1,67 @@
-// Difference between null and undefined in JavaScript
+// ---------------------------
+// null vs undefined in JavaScript
+// ---------------------------
 
 // undefined: variable declared but not assigned a value
 let a;
 console.log(a); // undefined
-console.log(typeof a); // "undefined"
 
-// null: explicitly assigned "nothing" value
+// null: explicitly assigned "no value"
 let b = null;
 console.log(b); // null
-console.log(typeof b); // "object" (this is a known JS bug)
 
-// Key differences:
-
-// 1. Default vs intentional
-let x;         // JS sets this to undefined automatically
-let y = null;  // programmer sets this to null intentionally
-
-// 2. Checking equality
-console.log(null == undefined);  // true  (loose equality)
-console.log(null === undefined); // false (strict equality - different types)
-
-// 3. typeof
+// typeof
 console.log(typeof undefined); // "undefined"
-console.log(typeof null);     // "object" (historical quirk)
+console.log(typeof null);      // "object" (historical JS bug)
 
-// 4. Common use cases
-// undefined -> variable not yet initialized
-// null -> explicitly empty/absent value
+// Loose equality (==) says they are equal
+console.log(null == undefined);  // true
 
-function greet(name) {
-  // if name is undefined (not passed), default to "Guest"
-  if (name === undefined) {
-    name = "Guest";
-  }
-  // if name is null (intentionally empty), still show "Guest"
-  if (name === null) {
-    name = "Guest";
-  }
-  console.log("Hello, " + name);
+// Strict equality (===) says they are NOT equal
+console.log(null === undefined); // false
+
+// numeric coercion
+console.log(Number(undefined)); // NaN
+console.log(Number(null));      // 0
+
+console.log(1 + undefined); // NaN
+console.log(1 + null);      // 1
+
+// object lookup: missing property gives undefined
+const obj = { name: "Alice" };
+console.log(obj.age); // undefined
+
+// intentionally empty value: use null
+obj.age = null;
+console.log(obj.age); // null
+
+// function with no return statement
+function foo() {}
+console.log(foo()); // undefined
+
+// function parameter not provided
+function bar(x) { return x; }
+console.log(bar()); // undefined
+
+// JSON serialization
+console.log(JSON.stringify({ a: undefined, b: null }));
+// {"b":null} -- undefined keys are omitted
+
+// default parameter: only undefined triggers default
+function greet(name = "Guest") {
+  return `Hello, ${name}`;
 }
+console.log(greet(undefined)); // Hello, Guest
+console.log(greet(null));      // Hello, null  (null does NOT trigger default)
 
-greet();       // Hello, Guest (name is undefined)
-greet(null);   // Hello, Guest (name is null)
-greet("John"); // Hello, John
+// optional chaining
+const user = { profile: null };
+console.log(user?.profile?.name); // undefined (nullish, short-circuits)
+
+// nullish coalescing (??) — only null/undefined fallback
+const val1 = null;
+const val2 = undefined;
+const val3 = false;
+console.log(val1 ?? "fallback"); // "fallback"
+console.log(val2 ?? "fallback"); // "fallback"
+console.log(val3 ?? "fallback"); // false (not nullish)

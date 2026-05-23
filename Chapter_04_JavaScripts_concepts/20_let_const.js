@@ -1,5 +1,7 @@
 //TDZ start here
 console.log(c);
+let c = " Programming";
+const c = " Programming";
 console.log("Hi");
 console.log("Hi");
 console.log("Hi");
