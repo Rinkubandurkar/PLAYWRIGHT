@@ -12,7 +12,8 @@ A progressive JavaScript tutorial series covering core concepts from basics to a
 | 04 | JavaScript Concepts (var/let/const, hoisting, scope) | 13 |
 | 05 | Literals (string, number, null, undefined, template literals) | 8 |
 | 07 | If/Else Conditional Statements | 11 |
-| 08 | Switch Statement | 1 |
+| 08 | Switch Statement | 9 |
+| 09 | User Input (readline, prompt-sync) | 3 |
 | 10 | Loops (for, while, do-while, for-of/in) | 12 |
 
 ## Topics Covered
@@ -22,6 +23,7 @@ A progressive JavaScript tutorial series covering core concepts from basics to a
 - Literal types (string, number, boolean, null, undefined)
 - Template literals & backtick syntax
 - If/else if/else conditional logic
-- Switch statements
+- Switch statements (break, default, grouping, real-time examples)
+- User input handling (Node.js readline, prompt-sync)
 - For, while, and do-while loops
 - Interview question (IQ) exercises
