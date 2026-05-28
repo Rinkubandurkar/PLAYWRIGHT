@@ -1,0 +1,9 @@
+let fruits = [];
+let fruits_fresh = ["aaple", "banana", "cheery"];
+
+
+let arr = [10, 20, 30, 40];
+
+console.log(arr[0]);
+console.log(arr[3]);
+console.log(ass[4]);

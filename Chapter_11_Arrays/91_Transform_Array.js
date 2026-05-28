@@ -1,0 +1,19 @@
+let scores = [45, 82, 91.60, 91];
+
+//map -transform every element  , return a new arrays
+//map will always return the same number of elements that you have
+//but based on the condition their values will be chnaged
+let grades = scores.map(s => s > 70 ? "Pass" : "Fail");
+console.log(grades);
+
+
+
+//filter - keeps elements that pass a test
+
+let passing = scores.filter(s => s > 70);
+console.log(passing);
+
+//reduce - accumulates to a single value
+let total = scores.reduce((a, b) => a + b, 0);
+console.log(total);
+
