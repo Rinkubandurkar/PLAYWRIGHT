@@ -6,4 +6,8 @@ let arr = [10, 20, 30, 40];
 
 console.log(arr[0]);
 console.log(arr[3]);
-console.log(ass[4]);
+console.log(arr[4]);
+
+
+let testResults = ["pass", "fail", "pass", "skip"];
+let mixed = [1, "hello", true, null];   // JS arrays  can hold any type

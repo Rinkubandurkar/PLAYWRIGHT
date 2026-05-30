@@ -17,3 +17,7 @@ console.log(passing);
 let total = scores.reduce((a, b) => a + b, 0);
 console.log(total);
 
+//flat - flatterns nested arrays
+let nested = [[1, 2], [3, 4], [5]];
+console.log(nested.flat());
+

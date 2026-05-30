@@ -20,7 +20,16 @@ tests.forEach((test, index) => {
 
 })
 
-
+let students = ["methis", "senthil", "ajay", "rahul"]
 for (let student in students) {
     console.log(student, "->", students[student]);  //index=in
 }
+
+console.log("....");
+
+for (let [i, test] of tests.entries()) {   // never used
+    console.log(i, test);
+
+}
+
+

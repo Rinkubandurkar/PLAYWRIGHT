@@ -15,4 +15,10 @@ results.includes("skip");   //false
 
 //finf -returns first matching element
 let num = [10, 20, 30, 45];
-num.find(x => x > 20);
+let r = num.find(x => x > 20);  //30 
+console.log(r);
+//findIndex
+num.findIndex(n => n > 20);
+num.findLastIndex(n => n > 20);
+
+
