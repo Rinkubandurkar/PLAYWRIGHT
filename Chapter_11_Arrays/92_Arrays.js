@@ -13,8 +13,8 @@ console.log(num);
 
 num.sort((a, b) => a - b);   // Ascending
 console.log(num);
-num.sort((a, b) => b - a);
-
+num.sort((a, b) => b - a);   //Descending 
+console.log(num);
 
 
 

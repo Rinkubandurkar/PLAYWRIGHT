@@ -19,4 +19,5 @@ console.log(result1);
 [80, 60, 85].some(s => s < 70);  //true
 
 
-s => s > 70
+//s => s > 70 , arrow function
+//parameter, ==> define funtion,  = condition
