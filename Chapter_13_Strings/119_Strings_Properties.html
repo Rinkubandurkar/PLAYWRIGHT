@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Properties Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; background: #1e1e2e; color: #cdd6f4; }
+    h1 { color: #cba6f7; border-bottom: 2px solid #cba6f7; padding-bottom: 8px; }
+    h2 { color: #89b4fa; font-size: 1.2rem; }
+    .demo { background: #313244; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; }
+    .demo .code { color: #f9e2af; font-family: monospace; margin-bottom: 6px; }
+    .demo .result { color: #a6e3a1; font-family: monospace; }
+    .label { color: #6c7086; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>String Properties Demo</h1>
+  <p>Open the console (<kbd>F12</kbd>) or see results below.</p>
+
+  <div id="output"></div>
+
+  <script>
+    const out = document.getElementById("output");
+
+    function show(label, expression, value) {
+      const div = document.createElement("div");
+      div.className = "demo";
+      div.innerHTML = `<div class="label">${label}</div>
+                       <div class="code">▸ ${expression}</div>
+                       <div class="result">→ ${value}</div>`;
+      out.appendChild(div);
+    }
+
+    // ─── Demonstrations ───────────────────────────────────────────────
+    let str = "Hello, World!";
+
+    show("Length property", "str.length", str.length);
+    show("Character at index 0", 'str[0]', str[0]);
+    show("Last character", 'str[str.length - 1]', str[str.length - 1]);
+    show("indexOf 'World'", 'str.indexOf("World")', str.indexOf("World"));
+    show("indexOf 'o'", 'str.indexOf("o")', str.indexOf("o"));
+    show("lastIndexOf 'o'", 'str.lastIndexOf("o")', str.lastIndexOf("o"));
+    show("slice(0, 5)", 'str.slice(0, 5)', str.slice(0, 5));
+    show("slice(7, 12)", 'str.slice(7, 12)', str.slice(7, 12));
+    show("toUpperCase", 'str.toUpperCase()', str.toUpperCase());
+    show("toLowerCase", 'str.toLowerCase()', str.toLowerCase());
+    show("startsWith 'Hello'", 'str.startsWith("Hello")', str.startsWith("Hello"));
+    show("endsWith '!'", 'str.endsWith("!")', str.endsWith("!"));
+    show("includes 'World'", 'str.includes("World")', str.includes("World"));
+    show("replace World → Playwright", 'str.replace("World", "Playwright")', str.replace("World", "Playwright"));
+
+    let spaced = "  Hi  ";
+    show("trim whitespace", '"  Hi  ".trim()', `"${spaced.trim()}"`);
+    show("split by ', '", 'str.split(", ")', JSON.stringify(str.split(", ")));
+    show("repeat 'Ha' 3 times", '"Ha".repeat(3)', "Ha".repeat(3));
+    show("charAt(0)", 'str.charAt(0)', str.charAt(0));
+    show("charCodeAt(0)", 'str.charCodeAt(0)', str.charCodeAt(0));
+
+    let name = "Alice";
+    show("Template literal", '`Hello, ${name}!`', `Hello, ${name}!`);
+  </script>
+</body>
+</html>
