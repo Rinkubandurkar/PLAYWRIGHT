@@ -20,6 +20,8 @@ A progressive JavaScript tutorial series covering core concepts from basics to a
 | 12 | Functions (basic, parameter, return, expression, arrow, IIFE, rest, spread, scope, closure, higher-order, pure) | 22 |
 | 13 | Strings (properties, search, substring, transform) | 8 |
 | 14 | 2D Arrays | 5 |
+| 15 | Callback Functions | 6 |
+| 16 | Callback Hell (20+ Steps E2E) | 1 |
 
 ## Topics Covered
 
@@ -36,4 +38,5 @@ A progressive JavaScript tutorial series covering core concepts from basics to a
 - Functions: declarations, expressions, arrow functions, IIFE, default/rest/spread parameters, scope, closures, higher-order functions, pure functions
 - Strings: properties, search methods, substrings, transformations
 - 2D Arrays: creation, iteration, real-world examples, pattern problems
+- Callbacks: synchronous, asynchronous, callback hell pattern
 - Interview question (IQ) exercises throughout
